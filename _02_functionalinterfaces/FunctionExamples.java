@@ -14,10 +14,7 @@ public class FunctionExamples {
 		//Medium hard Functions
 		
 		
-		
-		
-		
-		
+
 		//Combine Functions
 		FunctionStringUppercaseAndRemoveLastChar("Hello World");
 
@@ -37,10 +34,10 @@ public class FunctionExamples {
 	**/
 	public static void FunctionStringUppercaseAndRemoveLastChar(String xyz) {
 		Function <String,String> toUpperCase = z-> z.toUpperCase();
-		Function <String,String> f2 = y -> y.substring(0, y.length()-1);
-		Function<String,String> f1 = toUpperCase.andThen(f2);
+		Function <String,String> removeLastChar = y -> y.substring(0, y.length()-1);
+		Function<String,String> CombinedFunction = toUpperCase.andThen(removeLastChar);
 		
-		System.out.println(f1.apply(xyz));
+		System.out.println(CombinedFunction.apply(xyz));
 		
 	}
 
